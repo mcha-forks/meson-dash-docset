@@ -16,7 +16,7 @@ This file will build the docset.
 
 ### `src/icon.png`
 
-If you want to associate an icon with the docset, it should be saved to `src/icon.png`.
+If you want to associate an icon with the docset, it should be saved to `src/icon.png`. Make sure to uncomment the corresponding line in `Makefile` to include the icon in the docset.
 
 ### `src/index.sh`
 
