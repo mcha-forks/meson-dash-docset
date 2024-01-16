@@ -13,7 +13,6 @@ To generate a docset from the latest edition of the Meson Manual:
 Requirements:
 
 - any POSIX-compliant shell
-- curl    - https://curl.se/
 - make    - https://www.gnu.org/software/make/
 - pup     - https://tracker.debian.org/pkg/pup
 - sqlite3 - https://www.sqlite.org/index.html

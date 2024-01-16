@@ -68,9 +68,13 @@ $(DOCUMENTS_DIR): $(RESOURCES_DIR) $(MANUAL_FILE)
 $(INFO_PLIST_FILE): src/Info.plist $(CONTENTS_DIR)
 	cp src/Info.plist $@
 
-$(INDEX_FILE): src/index.sh $(DOCUMENTS_DIR)
+$(INDEX_FILE): src/index-pages.sh src/index-terms.sh $(DOCUMENTS_DIR)
 	rm -f $@
-	src/index.sh $@ $(DOCUMENTS_DIR)/*.html
+	src/index-pages.sh $@ $(DOCUMENTS_DIR)/*.html
+	src/index-terms.sh "Type" "elementary" $@ $(DOCUMENTS_DIR)/Reference-manual.html
+	src/index-terms.sh "Function" "functions" $@ $(DOCUMENTS_DIR)/Reference-manual.html
+	src/index-terms.sh "Builtin" "builtin" $@ $(DOCUMENTS_DIR)/Reference-manual.html
+	src/index-terms.sh "Object" "returned" $@ $(DOCUMENTS_DIR)/Reference-manual.html
 
 $(ICON_FILE): src/icon.png $(DOCSET_DIR)
 	cp $(SRC_ICON) $@
