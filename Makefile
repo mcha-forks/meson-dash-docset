@@ -1,4 +1,4 @@
-#DOCSET_NAME = ...
+DOCSET_NAME = Meson
 
 DOCSET_DIR    = $(DOCSET_NAME).docset
 CONTENTS_DIR  = $(DOCSET_DIR)/Contents
@@ -10,10 +10,10 @@ INDEX_FILE      = $(RESOURCES_DIR)/docSet.dsidx
 ICON_FILE       = $(DOCSET_DIR)/icon.png
 ARCHIVE_FILE    = $(DOCSET_NAME).tgz
 
-#SRC_ICON = src/icon.png
+SRC_ICON = src/icon.png
 
 #MANUAL_URL  = ...
-#MANUAL_FILE = tmp/...
+MANUAL_FILE = Meson.src.tgz
 
 ERROR_DOCSET_NAME = $(error DOCSET_NAME is unset)
 WARNING_MANUAL_URL = $(warning MANUAL_URL is unset)
@@ -51,9 +51,6 @@ tmp:
 
 $(ARCHIVE_FILE): $(DOCSET)
 	tar --exclude='.DS_Store' -czf $@ $(DOCSET_DIR)
-
-$(MANUAL_FILE): tmp
-	curl -o $@ $(MANUAL_URL)
 
 $(DOCSET_DIR):
 	mkdir -p $@
